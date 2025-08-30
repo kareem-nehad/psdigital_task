@@ -32,6 +32,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           icon: const Icon(
             Icons.arrow_back_ios_new_rounded,
             color: AppColors.black,
+            fontWeight: FontWeight.w600,
           ),
         ),
         bottom: PreferredSize(
