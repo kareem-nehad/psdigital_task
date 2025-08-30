@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:psdigital_task/core/assets/app_icons.dart';
@@ -29,82 +30,89 @@ class _AddToCartButtonState extends State<AddToCartButton> {
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.primaryColor,
               elevation: 0,
-              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
-              fixedSize: Size(context.rWidth(0.3), context.rHeight(0.02)),
+              padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
+              fixedSize: Size(context.rWidth(0.24), context.rHeight(0.02)),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadiusGeometry.circular(5),
               ),
             ),
-            label: Text(
+            label: AutoSizeText(
               'Add To Cart',
               style: TextStyles.font18BlackSemiBold,
+              maxLines: 1,
             ),
             icon: const Icon(
               Icons.add,
               color: AppColors.black,
             ),
           )
-        : Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                onPressed: () => setState(() {
-                  widget.menuItem.count--;
-                }),
-                style: IconButton.styleFrom(
-                  backgroundColor: AppColors.secondaryColor,
-                  elevation: 4,
-                  shadowColor: AppColors.black.withValues(alpha: 0.75),
-                  padding: const EdgeInsets.all(4),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  fixedSize: Size(
-                    context.rWidth(0.1),
-                    context.rHeight(0.045),
-                  ),
-                ),
-                icon: widget.menuItem.count == 1
-                    ? SvgPicture.asset(
-                        AppIcons.delete,
-                        height: context.rHeight(0.02),
-                        width: context.rWidth(0.04),
-                      )
-                    : const Icon(
-                        Icons.remove,
-                        color: AppColors.black,
+        : SizedBox(
+            width: context.rWidth(0.24),
+            child: FittedBox(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  IconButton(
+                    onPressed: () => setState(() {
+                      widget.menuItem.count--;
+                    }),
+                    style: IconButton.styleFrom(
+                      backgroundColor: AppColors.secondaryColor,
+                      elevation: 4,
+                      shadowColor: AppColors.black.withValues(alpha: 0.75),
+                      padding: const EdgeInsets.all(4),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
                       ),
-              ),
-              SizedBox(width: context.rWidth(0.03)),
-              Text(
-                '${widget.menuItem.count}',
-                style: TextStyles.font16BlackBold,
-              ),
-              SizedBox(width: context.rWidth(0.03)),
-              IconButton(
-                style: IconButton.styleFrom(
-                  backgroundColor: AppColors.primaryColor,
-                  elevation: 4,
-                  shadowColor: AppColors.black.withValues(alpha: 0.75),
-                  padding: const EdgeInsets.all(4),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
+                      fixedSize: Size(
+                        context.rWidth(0.05),
+                        context.rHeight(0.045),
+                      ),
+                    ),
+                    icon: widget.menuItem.count == 1
+                        ? SvgPicture.asset(
+                            AppIcons.delete,
+                            height: context.rHeight(0.02),
+                            width: context.rWidth(0.04),
+                          )
+                        : const Icon(
+                            Icons.remove,
+                            color: AppColors.black,
+                            size: 28,
+                          ),
                   ),
-                  fixedSize: Size(
-                    context.rWidth(0.1),
-                    context.rHeight(0.045),
+                  SizedBox(width: context.rWidth(0.023)),
+                  Text(
+                    '${widget.menuItem.count}',
+                    style: TextStyles.font16BlackBold,
                   ),
-                ),
-                onPressed: () => setState(() {
-                  widget.menuItem.count++;
-                }),
-                icon: const Icon(
-                  Icons.add,
-                  color: AppColors.black,
-                  size: 32,
-                ),
+                  SizedBox(width: context.rWidth(0.023)),
+                  IconButton(
+                    style: IconButton.styleFrom(
+                      backgroundColor: AppColors.primaryColor,
+                      elevation: 4,
+                      shadowColor: AppColors.black.withValues(alpha: 0.75),
+                      padding: const EdgeInsets.all(4),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      fixedSize: Size(
+                        context.rWidth(0.05),
+                        context.rHeight(0.045),
+                      ),
+                    ),
+                    onPressed: () => setState(() {
+                      widget.menuItem.count++;
+                    }),
+                    icon: const Icon(
+                      Icons.add,
+                      color: AppColors.black,
+                      size: 26,
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           );
   }
 }

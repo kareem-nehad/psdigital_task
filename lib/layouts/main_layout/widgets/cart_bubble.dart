@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:bubble_box/bubble_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -21,10 +22,10 @@ class CartBubble extends StatelessWidget {
       opacity: cartBubbleOpacity,
       child: Center(
         child: SizedBox(
-          height: context.rHeight(0.06),
+          height: context.rHeight(0.065),
           width: context.rWidth(0.4),
           child: BubbleBox(
-            maxHeight: context.rHeight(0.06),
+            maxHeight: context.rHeight(0.065),
             maxWidth: context.rWidth(0.4),
             backgroundColor: AppColors.red,
             shape: BubbleShapeBorder(
@@ -50,11 +51,11 @@ class CartBubble extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    AutoSizeText(
                       'view cart',
                       style: TextStyles.font18WhiteSemiBold,
                     ),
-                    Text(
+                    AutoSizeText(
                       '333 BD',
                       style: TextStyles.font18WhiteSemiBold,
                     ),

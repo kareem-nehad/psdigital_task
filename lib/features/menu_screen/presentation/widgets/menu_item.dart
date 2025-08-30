@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:psdigital_task/core/assets/app_icons.dart';
@@ -19,7 +20,7 @@ class MenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: context.rHeight(0.22),
+      height: context.rHeight(0.25),
       width: context.rWidth(1),
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
@@ -61,7 +62,7 @@ class MenuItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Text(
+                    AutoSizeText(
                       menuItem.itemName ?? '-',
                       style: TextStyles.font20BlackBold,
                     ),
@@ -86,9 +87,10 @@ class MenuItem extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: context.rHeight(0.001)),
-                Text(
+                AutoSizeText(
                   menuItem.itemDescription ?? '-',
                   style: TextStyles.font16SecondaryRegular,
+                  maxLines: 2,
                 ),
                 SizedBox(height: context.rHeight(0.001)),
                 TextButton.icon(
@@ -97,7 +99,7 @@ class MenuItem extends StatelessWidget {
                     padding: EdgeInsets.zero,
                     splashFactory: NoSplash.splashFactory,
                   ),
-                  label: Text(
+                  label: AutoSizeText(
                     'Customize',
                     style: TextStyles.font18RedBold,
                   ),
@@ -106,16 +108,22 @@ class MenuItem extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    Text(
-                      '${menuItem.itemPrice?.round()} BD',
-                      style: TextStyles.font20BlackBold,
+                    Flexible(
+                      child: AutoSizeText(
+                        '${menuItem.itemPrice?.round()} BD',
+                        style: TextStyles.font20BlackBold,
+                        maxLines: 1,
+                      ),
                     ),
-                    SizedBox(width: context.rWidth(0.03)),
-                    Text(
-                      '${(menuItem.itemPrice?.round() ?? 0) + 50} BD',
-                      style: TextStyles.font16SecondaryRegular.copyWith(
-                        decoration: TextDecoration.lineThrough,
-                        decorationColor: AppColors.secondaryTextColor,
+                    SizedBox(width: context.rWidth(0.02)),
+                    Flexible(
+                      child: AutoSizeText(
+                        '${(menuItem.itemPrice?.round() ?? 0) + 50} BD',
+                        style: TextStyles.font16SecondaryRegular.copyWith(
+                          decoration: TextDecoration.lineThrough,
+                          decorationColor: AppColors.secondaryTextColor,
+                        ),
+                        maxLines: 1,
                       ),
                     ),
                     const Spacer(),

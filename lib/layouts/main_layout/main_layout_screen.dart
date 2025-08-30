@@ -48,7 +48,7 @@ class _MainLayoutScreenState extends State<MainLayoutScreen> {
             clipBehavior: Clip.none,
             children: [
               SizedBox(
-                height: context.rHeight(0.13),
+                height: context.rHeight(0.145),
                 child: BottomNavigationBar(
                   currentIndex: state.screenIndex,
                   onTap: (index) {
