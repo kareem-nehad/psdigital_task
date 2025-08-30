@@ -11,9 +11,11 @@ This is a part of a fastfood ordering app where users can orders their favorite 
 </div>
 
 ## Screenshots & video
-| Menu Screen | Profile Screen 1 | Profile Screen 2 |
-|----------|----------|----------|
-| <img width="540" height="1109" alt="image" src="https://github.com/user-attachments/assets/490029fb-1478-4426-b156-470a53e41b2b" /> | <img width="540" height="1109" alt="image" src="https://github.com/user-attachments/assets/3ac229d4-cbd9-462a-ba29-8bfba723d04e" /> | <img width="540" height="1109" alt="image" src="https://github.com/user-attachments/assets/fa0427dc-b0ec-4cd6-bab4-423325fb6822" />|
+| Menu Screen | Profile Screen 1 | Profile Screen 2 | Video |
+|-------------|------------------|------------------|-------|
+| <img width="540" height="1109" alt="image" src="https://github.com/user-attachments/assets/490029fb-1478-4426-b156-470a53e41b2b" /> | <img width="540" height="1109" alt="image" src="https://github.com/user-attachments/assets/3ac229d4-cbd9-462a-ba29-8bfba723d04e" /> | <img width="540" height="1109" alt="image" src="https://github.com/user-attachments/assets/fa0427dc-b0ec-4cd6-bab4-423325fb6822" /> |https://github.com/user-attachments/assets/ee44157e-d8b6-4b0c-aae9-0aa25f40b5af |
+
+
 
 ## Architecture
 
